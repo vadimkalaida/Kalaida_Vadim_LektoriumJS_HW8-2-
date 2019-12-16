@@ -79,6 +79,10 @@ export default class ItemComponent extends Component {
     });
   }
 
+  editItem(index, event) {
+
+  }
+
   render() {
     const {nameError, ageError, occupationError} = this.state;
     return (
@@ -96,7 +100,7 @@ export default class ItemComponent extends Component {
           </form>
         </div>
         <div className="items">
-          { this.state.items.map( (item, index) => <div className="item" key={index} onContextMenu={this.delItem.bind(this, index)}>
+          { this.state.items.map( (item, index) => <div className="item" key={index} onClick={this.editItem.bind(this, index)} onContextMenu={this.delItem.bind(this, index)}>
             <h3 className={'item-title'}>{ item.name }</h3>
             <p className={'item-age'}>{ item.age }</p>
             <p className={'item-occupation'}>{ item.occupation }</p>
